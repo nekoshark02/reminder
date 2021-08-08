@@ -10,10 +10,10 @@ def today_time_now():
     return n
 
 @time.route("/calendar/")
-def calendar_today():
+def calendar_today(int):
     year_t = int(time_n.year)
     month_t = int(time_n.month)
-    calendar_t = calendar(year_t,month_t)
+    calendar_t = int(calendar(year_t,month_t))
     return calendar_t
 
 if __name__ == "__main__":
