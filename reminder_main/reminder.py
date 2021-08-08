@@ -1,22 +1,15 @@
-from flask import Flask
-import datetime,calendar
+from flask import Flask,render_template
+import datetime
 
 time_n = datetime.datetime.now()
 
-time = Flask(__name__)
-@time.route("/")
-def today_time_now():
-    n = time_n.strftime('%Y/%m/%d')
-    return n
+remind = Flask(__name__)
 
-@time.route("/calendar/")
-def calendar_today(int):
-    year_t = int(time_n.year)
-    month_t = int(time_n.month)
-    calendar_t = int(calendar(year_t,month_t))
-    return calendar_t
-
+@remind.route("/")
+def reminder_():
+    return render_template('reminder_html')
+    
 if __name__ == "__main__":
-    time.run()
+    remind.run()
 
 
