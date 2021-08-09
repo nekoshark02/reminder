@@ -9,13 +9,11 @@ remind = Flask(__name__)
 @remind.route("/")
 def reminder_mainpage():
     return render_template('reminder.html')
-@remind.route("/ivent",methods=['GET','POST'])
+@remind.route("/ivent",methods=['POST'])
 def reminder_ivent():
     try:
-        if request.method == 'GET':
-            return request.args.get('query','')
-        elif request.method == 'POST':
-            return request.form['query']
+        if request.method == 'POST':
+            return render_template('reminder_done.html')
         else:
             return 400
     except Exception as e:

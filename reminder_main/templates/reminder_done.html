@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Remind Me</title>
+        <link rel = "styleseet",href = "static/reminder_done.css">
+    </head>
+    <body>
+        <h2>新しい予定が設定されました！</h2>
+        <form action="/ivent" method="POST">
+        </form>
+        <h3>New ivent : {{request.form["query"]}}</h3>
+    </body>
+</html>
